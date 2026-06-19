@@ -1,0 +1,38 @@
+{
+  "expert_vs_novice": {
+    "acc": 0.5534635380075875,
+    "bal_acc": 0.5540176268427898,
+    "f1": 0.5796296296296296,
+    "auroc": 0.517115156374338
+  },
+  "feature_contrasts": {
+    "mean_alpha_rel": {
+      "expert": 0.4842,
+      "novice": 0.3533
+    },
+    "mean_theta_rel": {
+      "expert": 0.0979,
+      "novice": 0.1116
+    },
+    "mean_alpha_theta": {
+      "expert": 7.4136,
+      "novice": 5.3834
+    },
+    "alpha_asym": {
+      "expert": 0.0932,
+      "novice": 0.0843
+    },
+    "L_alpha_rel": {
+      "expert": 0.4783,
+      "novice": 0.3444
+    },
+    "R_alpha_rel": {
+      "expert": 0.49,
+      "novice": 0.3622
+    }
+  },
+  "transfer_relaxation_index": {
+    "expert": 46.1,
+    "novice": 60.0
+  }
+}

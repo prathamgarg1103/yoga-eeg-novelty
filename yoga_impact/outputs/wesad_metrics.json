@@ -1,0 +1,45 @@
+{
+  "stress_vs_rest::RandomForest": {
+    "acc": 0.9324618736383442,
+    "bal_acc": 0.8926664434229352,
+    "f1": 0.8442211055276382,
+    "auroc": 0.9734055831227739
+  },
+  "stress_vs_rest::LightGBM": {
+    "acc": 0.9368191721132898,
+    "bal_acc": 0.8931474321897166,
+    "f1": 0.8517887563884157,
+    "auroc": 0.9471977837985935
+  },
+  "calm_vs_stress::RandomForest": {
+    "acc": 0.9415156507413509,
+    "bal_acc": 0.9199189079508276,
+    "f1": 0.9609675645959318,
+    "auroc": 0.9797305790288348
+  },
+  "calm_vs_stress::permutation": {
+    "observed_auroc": 0.9810162722796634,
+    "perm_mean": 0.49716600406777045,
+    "perm_p": 0.006622516556291391,
+    "n_perm": 150
+  },
+  "relaxation_score_by_condition": {
+    "meditation": 93.97,
+    "baseline": 92.24,
+    "stress": 19.81
+  },
+  "top_features": {
+    "hrv_meanNN": 0.1573,
+    "hrv_meanHR": 0.1506,
+    "resp_rate_std": 0.1397,
+    "eda_std": 0.082,
+    "eda_slope": 0.0643,
+    "resp_rate": 0.0492,
+    "resp_sig_std": 0.0412,
+    "eda_max": 0.0354,
+    "eda_range": 0.0352,
+    "eda_min": 0.0249,
+    "eda_mean": 0.0244,
+    "emg_p90": 0.0213
+  }
+}

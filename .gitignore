@@ -1,0 +1,29 @@
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ── Virtual environments ────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Datasets (large / licensed / private — never commit) ─
+datasets/
+**/Custom Dataset.zip
+
+# ── Abandoned prior work & source documents (kept local) ─
+mesmi/
+*.pdf
+*.docx
+MESMI_extracted.txt
+
+# ── Large, regenerable feature caches ───────────────────
+yoga_impact/outputs/wesad_features.csv
+yoga_impact/outputs/ds_meditation_features.csv
+
+# ── OS / editor cruft ───────────────────────────────────
+Thumbs.db
+.DS_Store
+*.swp

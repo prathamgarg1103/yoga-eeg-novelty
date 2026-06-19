@@ -1,0 +1,145 @@
+{
+  "wesad": {
+    "stress_vs_rest::RandomForest": {
+      "acc": 0.9324618736383442,
+      "bal_acc": 0.8926664434229352,
+      "f1": 0.8442211055276382,
+      "auroc": 0.9734055831227739
+    },
+    "stress_vs_rest::LightGBM": {
+      "acc": 0.9368191721132898,
+      "bal_acc": 0.8931474321897166,
+      "f1": 0.8517887563884157,
+      "auroc": 0.9471977837985935
+    },
+    "calm_vs_stress::RandomForest": {
+      "acc": 0.9415156507413509,
+      "bal_acc": 0.9199189079508276,
+      "f1": 0.9609675645959318,
+      "auroc": 0.9797305790288348
+    },
+    "calm_vs_stress::permutation": {
+      "observed_auroc": 0.9810162722796634,
+      "perm_mean": 0.49716600406777045,
+      "perm_p": 0.006622516556291391,
+      "n_perm": 150
+    },
+    "relaxation_score_by_condition": {
+      "meditation": 93.97,
+      "baseline": 92.24,
+      "stress": 19.81
+    },
+    "top_features": {
+      "hrv_meanNN": 0.1573,
+      "hrv_meanHR": 0.1506,
+      "resp_rate_std": 0.1397,
+      "eda_std": 0.082,
+      "eda_slope": 0.0643,
+      "resp_rate": 0.0492,
+      "resp_sig_std": 0.0412,
+      "eda_max": 0.0354,
+      "eda_range": 0.0352,
+      "eda_min": 0.0249,
+      "eda_mean": 0.0244,
+      "emg_p90": 0.0213
+    }
+  },
+  "custom": {
+    "LORO(recording)::LogReg": {
+      "window": {
+        "acc": 0.8802547770700637,
+        "bal_acc": 0.8867134124415679,
+        "f1": 0.9046653144016227,
+        "auroc": 0.9028694714131608
+      },
+      "recording": {
+        "acc": 0.8947368421052632,
+        "auroc": 0.9111111111111112,
+        "n": 19
+      }
+    },
+    "LORO(recording)::RandomForest": {
+      "window": {
+        "acc": 0.8815286624203822,
+        "bal_acc": 0.8850413520316432,
+        "f1": 0.9063444108761329,
+        "auroc": 0.8837756202804746
+      },
+      "recording": {
+        "acc": 0.8947368421052632,
+        "auroc": 0.9,
+        "n": 19
+      }
+    },
+    "LOPO(subject)::LogReg": {
+      "window": {
+        "acc": 0.8305732484076433,
+        "bal_acc": 0.8048004314994606,
+        "f1": 0.8729703915950334,
+        "auroc": 0.8534843581445523
+      },
+      "recording": {
+        "acc": 0.7894736842105263,
+        "auroc": 0.9333333333333333,
+        "n": 19
+      }
+    },
+    "LOPO(subject)::RandomForest": {
+      "window": {
+        "acc": 0.8445859872611465,
+        "bal_acc": 0.8225278676734988,
+        "f1": 0.8829174664107485,
+        "auroc": 0.8201222581805107
+      },
+      "recording": {
+        "acc": 0.8421052631578947,
+        "auroc": 0.8555555555555555,
+        "n": 19
+      }
+    },
+    "permutation_LORO": {
+      "observed_auroc": 0.9184753685724559,
+      "perm_mean": 0.49792768788205677,
+      "perm_p": 0.004975124378109453,
+      "n_perm": 200
+    }
+  },
+  "ds": {
+    "expert_vs_novice": {
+      "acc": 0.5534635380075875,
+      "bal_acc": 0.5540176268427898,
+      "f1": 0.5796296296296296,
+      "auroc": 0.517115156374338
+    },
+    "feature_contrasts": {
+      "mean_alpha_rel": {
+        "expert": 0.4842,
+        "novice": 0.3533
+      },
+      "mean_theta_rel": {
+        "expert": 0.0979,
+        "novice": 0.1116
+      },
+      "mean_alpha_theta": {
+        "expert": 7.4136,
+        "novice": 5.3834
+      },
+      "alpha_asym": {
+        "expert": 0.0932,
+        "novice": 0.0843
+      },
+      "L_alpha_rel": {
+        "expert": 0.4783,
+        "novice": 0.3444
+      },
+      "R_alpha_rel": {
+        "expert": 0.49,
+        "novice": 0.3622
+      }
+    },
+    "transfer_relaxation_index": {
+      "expert": 46.1,
+      "novice": 60.0
+    }
+  }
+}
