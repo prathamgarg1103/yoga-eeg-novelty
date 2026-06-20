@@ -121,6 +121,9 @@ def run() -> dict:
         from yoga_impact.clean_custom import load_clean_recordings
         cdf = build_feature_matrix(load_clean_recordings())
         common = [c for c in feature_columns(cdf) if c in feats]
+        if config.TRANSFER_INVARIANT_ONLY:
+            # drop gain-dependent features (e.g. aperiodic_offset) for cross-device transfer
+            common = [c for c in common if c not in config.GAIN_DEPENDENT_FEATURES]
         model = make_pipeline(LogisticRegression(max_iter=2000, class_weight="balanced", C=0.5))
         model.fit(cdf[common].to_numpy(float), cdf["label"].to_numpy(int))
         ri = model.predict_proba(df[common].to_numpy(float))[:, 1] * 100

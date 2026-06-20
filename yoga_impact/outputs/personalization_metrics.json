@@ -1,0 +1,158 @@
+{
+  "per_subject": [
+    {
+      "subject": "S10",
+      "n_score": 49,
+      "n_adapt": 12,
+      "auroc_independent": 0.4569377990430622,
+      "balacc_independent": 0.618421052631579,
+      "auroc_recenter": 0.9952153110047847,
+      "auroc_zscore": 1.0
+    },
+    {
+      "subject": "S11",
+      "n_score": 49,
+      "n_adapt": 12,
+      "auroc_independent": 0.9712918660287081,
+      "balacc_independent": 0.9078947368421053,
+      "auroc_recenter": 1.0,
+      "auroc_zscore": 1.0
+    },
+    {
+      "subject": "S13",
+      "n_score": 49,
+      "n_adapt": 12,
+      "auroc_independent": 0.9952153110047848,
+      "balacc_independent": 0.7727272727272727,
+      "auroc_recenter": 1.0,
+      "auroc_zscore": 1.0
+    },
+    {
+      "subject": "S14",
+      "n_score": 49,
+      "n_adapt": 12,
+      "auroc_independent": 0.6578947368421052,
+      "balacc_independent": 0.6052631578947368,
+      "auroc_recenter": 0.9425837320574162,
+      "auroc_zscore": 0.9569377990430622
+    },
+    {
+      "subject": "S15",
+      "n_score": 49,
+      "n_adapt": 12,
+      "auroc_independent": 0.9904306220095693,
+      "balacc_independent": 0.5,
+      "auroc_recenter": 1.0,
+      "auroc_zscore": 1.0
+    },
+    {
+      "subject": "S16",
+      "n_score": 48,
+      "n_adapt": 12,
+      "auroc_independent": 0.8476658476658476,
+      "balacc_independent": 0.6142506142506143,
+      "auroc_recenter": 1.0,
+      "auroc_zscore": 1.0
+    },
+    {
+      "subject": "S17",
+      "n_score": 49,
+      "n_adapt": 10,
+      "auroc_independent": 0.7559808612440191,
+      "balacc_independent": 0.5,
+      "auroc_recenter": 0.9019138755980861,
+      "auroc_zscore": 0.6746411483253588
+    },
+    {
+      "subject": "S2",
+      "n_score": 47,
+      "n_adapt": 10,
+      "auroc_independent": 0.1616161616161616,
+      "balacc_independent": 0.5,
+      "auroc_recenter": 0.9797979797979798,
+      "auroc_zscore": 0.9444444444444444
+    },
+    {
+      "subject": "S3",
+      "n_score": 47,
+      "n_adapt": 11,
+      "auroc_independent": 0.9671717171717171,
+      "balacc_independent": 0.5,
+      "auroc_recenter": 1.0,
+      "auroc_zscore": 1.0
+    },
+    {
+      "subject": "S4",
+      "n_score": 48,
+      "n_adapt": 12,
+      "auroc_independent": 0.4668304668304668,
+      "balacc_independent": 0.5454545454545454,
+      "auroc_recenter": 0.9336609336609337,
+      "auroc_zscore": 0.9877149877149877
+    },
+    {
+      "subject": "S5",
+      "n_score": 49,
+      "n_adapt": 12,
+      "auroc_independent": 0.9736842105263157,
+      "balacc_independent": 0.8696172248803828,
+      "auroc_recenter": 1.0,
+      "auroc_zscore": 1.0
+    },
+    {
+      "subject": "S6",
+      "n_score": 48,
+      "n_adapt": 12,
+      "auroc_independent": 0.8574938574938575,
+      "balacc_independent": 0.8955773955773956,
+      "auroc_recenter": 1.0,
+      "auroc_zscore": 1.0
+    },
+    {
+      "subject": "S7",
+      "n_score": 49,
+      "n_adapt": 12,
+      "auroc_independent": 0.9952153110047848,
+      "balacc_independent": 0.9210526315789473,
+      "auroc_recenter": 0.9449760765550239,
+      "auroc_zscore": 0.8755980861244019
+    },
+    {
+      "subject": "S8",
+      "n_score": 47,
+      "n_adapt": 12,
+      "auroc_independent": 0.9270270270270271,
+      "balacc_independent": 0.9324324324324325,
+      "auroc_recenter": 0.927027027027027,
+      "auroc_zscore": 0.9027027027027028
+    },
+    {
+      "subject": "S9",
+      "n_score": 48,
+      "n_adapt": 12,
+      "auroc_independent": 0.9236842105263159,
+      "balacc_independent": 0.5105263157894737,
+      "auroc_recenter": 1.0,
+      "auroc_zscore": 0.8447368421052631
+    }
+  ],
+  "methods": [
+    "recenter",
+    "zscore"
+  ],
+  "recenter": {
+    "mean_auroc": 0.9750116623800834,
+    "mean_lift": 0.17846899531110055,
+    "helped": 13,
+    "hurt": 2,
+    "wilcoxon_p": 0.00152587890625
+  },
+  "zscore": {
+    "mean_auroc": 0.9457850673640148,
+    "mean_lift": 0.14924240029503189,
+    "helped": 11,
+    "hurt": 4,
+    "wilcoxon_p": 0.063720703125
+  },
+  "independent_mean_auroc": 0.7965426670689827
+}

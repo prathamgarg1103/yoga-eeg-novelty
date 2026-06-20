@@ -1,23 +1,23 @@
 {
   "LORO(recording)::LogReg": {
     "window": {
-      "acc": 0.8802547770700637,
-      "bal_acc": 0.8867134124415679,
-      "f1": 0.9046653144016227,
-      "auroc": 0.9028694714131608
+      "acc": 0.8369426751592357,
+      "bal_acc": 0.815821646889608,
+      "f1": 0.8766859344894027,
+      "auroc": 0.9079827400215751
     },
     "recording": {
-      "acc": 0.8947368421052632,
-      "auroc": 0.9111111111111112,
+      "acc": 0.8421052631578947,
+      "auroc": 0.9333333333333333,
       "n": 19
     }
   },
   "LORO(recording)::RandomForest": {
     "window": {
-      "acc": 0.8815286624203822,
-      "bal_acc": 0.8850413520316432,
-      "f1": 0.9063444108761329,
-      "auroc": 0.8837756202804746
+      "acc": 0.8738853503184714,
+      "bal_acc": 0.8765731751168644,
+      "f1": 0.9003021148036254,
+      "auroc": 0.8825746134483999
     },
     "recording": {
       "acc": 0.8947368421052632,
@@ -27,34 +27,110 @@
   },
   "LOPO(subject)::LogReg": {
     "window": {
-      "acc": 0.8305732484076433,
-      "bal_acc": 0.8048004314994606,
-      "f1": 0.8729703915950334,
-      "auroc": 0.8534843581445523
+      "acc": 0.8140127388535032,
+      "bal_acc": 0.8080366774541532,
+      "f1": 0.8537074148296593,
+      "auroc": 0.86789644012945
     },
     "recording": {
-      "acc": 0.7894736842105263,
+      "acc": 0.8421052631578947,
       "auroc": 0.9333333333333333,
       "n": 19
     }
   },
   "LOPO(subject)::RandomForest": {
     "window": {
-      "acc": 0.8445859872611465,
-      "bal_acc": 0.8225278676734988,
-      "f1": 0.8829174664107485,
-      "auroc": 0.8201222581805107
+      "acc": 0.8407643312101911,
+      "bal_acc": 0.8160913340524991,
+      "f1": 0.8806112702960841,
+      "auroc": 0.8199784250269687
     },
     "recording": {
       "acc": 0.8421052631578947,
-      "auroc": 0.8555555555555555,
+      "auroc": 0.8333333333333333,
       "n": 19
     }
   },
   "permutation_LORO": {
-    "observed_auroc": 0.9184753685724559,
-    "perm_mean": 0.49792768788205677,
+    "observed_auroc": 0.9220424307802949,
+    "perm_mean": 0.49974408486156063,
     "perm_p": 0.004975124378109453,
     "n_perm": 200
+  },
+  "ablation": {
+    "LORO": {
+      "base": {
+        "recording_auroc": 0.9111111111111112,
+        "recording_acc": 0.8947368421052632,
+        "window_auroc": 0.9028694714131608,
+        "n_features": 40,
+        "auroc_lift_vs_base": 0.0
+      },
+      "base+conn": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.8947368421052632,
+        "window_auroc": 0.9090614886731392,
+        "n_features": 46,
+        "auroc_lift_vs_base": 0.022222222222222143
+      },
+      "base+pac": {
+        "recording_auroc": 0.9111111111111112,
+        "recording_acc": 0.8947368421052632,
+        "window_auroc": 0.8995037756202805,
+        "n_features": 42,
+        "auroc_lift_vs_base": 0.0
+      },
+      "base+aperiodic": {
+        "recording_auroc": 0.9,
+        "recording_acc": 0.8947368421052632,
+        "window_auroc": 0.898626393383675,
+        "n_features": 43,
+        "auroc_lift_vs_base": -0.011111111111111183
+      },
+      "base+all": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.8421052631578947,
+        "window_auroc": 0.9079827400215751,
+        "n_features": 51,
+        "auroc_lift_vs_base": 0.022222222222222143
+      }
+    },
+    "LOPO": {
+      "base": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.7894736842105263,
+        "window_auroc": 0.8534843581445523,
+        "n_features": 40,
+        "auroc_lift_vs_base": 0.0
+      },
+      "base+conn": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.8421052631578947,
+        "window_auroc": 0.8748004314994606,
+        "n_features": 46,
+        "auroc_lift_vs_base": 0.0
+      },
+      "base+pac": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.7894736842105263,
+        "window_auroc": 0.8468896080546566,
+        "n_features": 42,
+        "auroc_lift_vs_base": 0.0
+      },
+      "base+aperiodic": {
+        "recording_auroc": 0.9111111111111111,
+        "recording_acc": 0.7894736842105263,
+        "window_auroc": 0.8360949298813377,
+        "n_features": 43,
+        "auroc_lift_vs_base": -0.022222222222222254
+      },
+      "base+all": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.8421052631578947,
+        "window_auroc": 0.86789644012945,
+        "n_features": 51,
+        "auroc_lift_vs_base": 0.0
+      }
+    }
   }
 }

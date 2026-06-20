@@ -6,3 +6,8 @@ mne
 neurokit2
 lightgbm
 matplotlib
+networkx
+# Optional (C5 deep vs classical): a true LSTM is used if torch is importable, else the
+# pipeline falls back to sklearn MLPClassifier. CPU build:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# torch

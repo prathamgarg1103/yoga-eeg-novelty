@@ -20,7 +20,7 @@
     },
     "calm_vs_stress::permutation": {
       "observed_auroc": 0.9810162722796634,
-      "perm_mean": 0.49716600406777045,
+      "perm_mean": 0.4971659681545513,
       "perm_p": 0.006622516556291391,
       "n_perm": 150
     },
@@ -47,23 +47,23 @@
   "custom": {
     "LORO(recording)::LogReg": {
       "window": {
-        "acc": 0.8802547770700637,
-        "bal_acc": 0.8867134124415679,
-        "f1": 0.9046653144016227,
-        "auroc": 0.9028694714131608
+        "acc": 0.8369426751592357,
+        "bal_acc": 0.815821646889608,
+        "f1": 0.8766859344894027,
+        "auroc": 0.9079827400215751
       },
       "recording": {
-        "acc": 0.8947368421052632,
-        "auroc": 0.9111111111111112,
+        "acc": 0.8421052631578947,
+        "auroc": 0.9333333333333333,
         "n": 19
       }
     },
     "LORO(recording)::RandomForest": {
       "window": {
-        "acc": 0.8815286624203822,
-        "bal_acc": 0.8850413520316432,
-        "f1": 0.9063444108761329,
-        "auroc": 0.8837756202804746
+        "acc": 0.8738853503184714,
+        "bal_acc": 0.8765731751168644,
+        "f1": 0.9003021148036254,
+        "auroc": 0.8825746134483999
       },
       "recording": {
         "acc": 0.8947368421052632,
@@ -73,35 +73,111 @@
     },
     "LOPO(subject)::LogReg": {
       "window": {
-        "acc": 0.8305732484076433,
-        "bal_acc": 0.8048004314994606,
-        "f1": 0.8729703915950334,
-        "auroc": 0.8534843581445523
+        "acc": 0.8140127388535032,
+        "bal_acc": 0.8080366774541532,
+        "f1": 0.8537074148296593,
+        "auroc": 0.86789644012945
       },
       "recording": {
-        "acc": 0.7894736842105263,
+        "acc": 0.8421052631578947,
         "auroc": 0.9333333333333333,
         "n": 19
       }
     },
     "LOPO(subject)::RandomForest": {
       "window": {
-        "acc": 0.8445859872611465,
-        "bal_acc": 0.8225278676734988,
-        "f1": 0.8829174664107485,
-        "auroc": 0.8201222581805107
+        "acc": 0.8407643312101911,
+        "bal_acc": 0.8160913340524991,
+        "f1": 0.8806112702960841,
+        "auroc": 0.8199784250269687
       },
       "recording": {
         "acc": 0.8421052631578947,
-        "auroc": 0.8555555555555555,
+        "auroc": 0.8333333333333333,
         "n": 19
       }
     },
     "permutation_LORO": {
-      "observed_auroc": 0.9184753685724559,
-      "perm_mean": 0.49792768788205677,
+      "observed_auroc": 0.9220424307802949,
+      "perm_mean": 0.49974408486156063,
       "perm_p": 0.004975124378109453,
       "n_perm": 200
+    },
+    "ablation": {
+      "LORO": {
+        "base": {
+          "recording_auroc": 0.9111111111111112,
+          "recording_acc": 0.8947368421052632,
+          "window_auroc": 0.9028694714131608,
+          "n_features": 40,
+          "auroc_lift_vs_base": 0.0
+        },
+        "base+conn": {
+          "recording_auroc": 0.9333333333333333,
+          "recording_acc": 0.8947368421052632,
+          "window_auroc": 0.9090614886731392,
+          "n_features": 46,
+          "auroc_lift_vs_base": 0.022222222222222143
+        },
+        "base+pac": {
+          "recording_auroc": 0.9111111111111112,
+          "recording_acc": 0.8947368421052632,
+          "window_auroc": 0.8995037756202805,
+          "n_features": 42,
+          "auroc_lift_vs_base": 0.0
+        },
+        "base+aperiodic": {
+          "recording_auroc": 0.9,
+          "recording_acc": 0.8947368421052632,
+          "window_auroc": 0.898626393383675,
+          "n_features": 43,
+          "auroc_lift_vs_base": -0.011111111111111183
+        },
+        "base+all": {
+          "recording_auroc": 0.9333333333333333,
+          "recording_acc": 0.8421052631578947,
+          "window_auroc": 0.9079827400215751,
+          "n_features": 51,
+          "auroc_lift_vs_base": 0.022222222222222143
+        }
+      },
+      "LOPO": {
+        "base": {
+          "recording_auroc": 0.9333333333333333,
+          "recording_acc": 0.7894736842105263,
+          "window_auroc": 0.8534843581445523,
+          "n_features": 40,
+          "auroc_lift_vs_base": 0.0
+        },
+        "base+conn": {
+          "recording_auroc": 0.9333333333333333,
+          "recording_acc": 0.8421052631578947,
+          "window_auroc": 0.8748004314994606,
+          "n_features": 46,
+          "auroc_lift_vs_base": 0.0
+        },
+        "base+pac": {
+          "recording_auroc": 0.9333333333333333,
+          "recording_acc": 0.7894736842105263,
+          "window_auroc": 0.8468896080546566,
+          "n_features": 42,
+          "auroc_lift_vs_base": 0.0
+        },
+        "base+aperiodic": {
+          "recording_auroc": 0.9111111111111111,
+          "recording_acc": 0.7894736842105263,
+          "window_auroc": 0.8360949298813377,
+          "n_features": 43,
+          "auroc_lift_vs_base": -0.022222222222222254
+        },
+        "base+all": {
+          "recording_auroc": 0.9333333333333333,
+          "recording_acc": 0.8421052631578947,
+          "window_auroc": 0.86789644012945,
+          "n_features": 51,
+          "auroc_lift_vs_base": 0.0
+        }
+      }
     }
   },
   "ds": {
@@ -141,5 +217,393 @@
       "expert": 46.1,
       "novice": 60.0
     }
+  },
+  "network": {
+    "expert_vs_novice_network": {
+      "acc": 0.5833333333333334,
+      "bal_acc": 0.5833333333333334,
+      "f1": 0.6428571428571429,
+      "auroc": 0.6666666666666666
+    },
+    "permutation": {
+      "observed_auroc": 0.6666666666666666,
+      "perm_mean": 0.47334722222222225,
+      "perm_p": 0.1377245508982036,
+      "n_perm": 500
+    },
+    "metric_contrasts": {
+      "theta_mean_connectivity": {
+        "expert_mean": 0.29338680569679615,
+        "novice_mean": 0.3143378016802841,
+        "p": 0.3708443333042212
+      },
+      "theta_density_weight": {
+        "expert_mean": 0.06637676544919809,
+        "novice_mean": 0.07650774508140823,
+        "p": 0.47048642205878966
+      },
+      "theta_global_efficiency": {
+        "expert_mean": 0.5633143187830671,
+        "novice_mean": 0.5392140652557307,
+        "p": 0.23658409332187613
+      },
+      "theta_mean_clustering": {
+        "expert_mean": 0.3252379552284589,
+        "novice_mean": 0.3460817217067502,
+        "p": 0.7508318840891169
+      },
+      "theta_char_path_length": {
+        "expert_mean": 1.9611327955590252,
+        "novice_mean": 1.899046397480044,
+        "p": 0.07825222852623705
+      },
+      "theta_modularity": {
+        "expert_mean": 0.19630736802352908,
+        "novice_mean": 0.16806693799809944,
+        "p": 0.053097957285583426
+      },
+      "theta_frontal_strength": {
+        "expert_mean": 0.2969333119948192,
+        "novice_mean": 0.29808759152815084,
+        "p": 0.5443701458566098
+      },
+      "alpha_mean_connectivity": {
+        "expert_mean": 0.43410479926786444,
+        "novice_mean": 0.3851030141904627,
+        "p": 0.1748533068932927
+      },
+      "alpha_density_weight": {
+        "expert_mean": 0.1133287505542639,
+        "novice_mean": 0.10039207321802911,
+        "p": 0.40250382378200356
+      },
+      "alpha_global_efficiency": {
+        "expert_mean": 0.4859974371693098,
+        "novice_mean": 0.4824452987213381,
+        "p": 0.5833604667027033
+      },
+      "alpha_mean_clustering": {
+        "expert_mean": 0.3481411260597111,
+        "novice_mean": 0.32378965086402445,
+        "p": 0.5067205148778584
+      },
+      "alpha_char_path_length": {
+        "expert_mean": 1.8561563104726917,
+        "novice_mean": 1.8702969329044248,
+        "p": 0.5443701458566098
+      },
+      "alpha_modularity": {
+        "expert_mean": 0.15893413131866663,
+        "novice_mean": 0.1499185697836942,
+        "p": 0.43573066003173655
+      },
+      "alpha_frontal_strength": {
+        "expert_mean": 0.3889338260230067,
+        "novice_mean": 0.35705044566130434,
+        "p": 0.2602362026171888
+      },
+      "beta_mean_connectivity": {
+        "expert_mean": 0.16810388701200996,
+        "novice_mean": 0.18328355103428948,
+        "p": 0.08853377201422956
+      },
+      "beta_density_weight": {
+        "expert_mean": 0.04098624206712306,
+        "novice_mean": 0.04667172765336223,
+        "p": 0.3123214216762161
+      },
+      "beta_global_efficiency": {
+        "expert_mean": 0.5381579802059677,
+        "novice_mean": 0.5228684413580219,
+        "p": 0.8852339144732017
+      },
+      "beta_mean_clustering": {
+        "expert_mean": 0.37922304776441634,
+        "novice_mean": 0.40124332907800303,
+        "p": 0.5443701458566098
+      },
+      "beta_char_path_length": {
+        "expert_mean": 2.0129017299618988,
+        "novice_mean": 1.901957600629362,
+        "p": 0.0024367348089890145
+      },
+      "beta_modularity": {
+        "expert_mean": 0.19323616096809082,
+        "novice_mean": 0.20215140991775907,
+        "p": 0.7074539677020747
+      },
+      "beta_frontal_strength": {
+        "expert_mean": 0.161321188866018,
+        "novice_mean": 0.17658632198793597,
+        "p": 0.12602212177037309
+      }
+    },
+    "note": "Expertise is age-confounded in ds001787 (experts skew younger); network contrasts are reported as associations, not causal expertise effects."
+  },
+  "uncertainty": {
+    "custom": {
+      "ece": 0.09474575972062522,
+      "mce": 0.2510213152592842,
+      "conformal_coverage": 0.9473684210526315,
+      "nominal": 0.9
+    },
+    "wesad": {
+      "ece": 0.02128365438193034,
+      "mce": 0.1727368045245904,
+      "conformal_coverage": 0.8871499176276771,
+      "nominal": 0.9
+    },
+    "convergent_validity": {
+      "autonomic": {
+        "spearman_rho": 1.0,
+        "spearman_p": 0.0,
+        "kendall_tau": 1.0,
+        "kendall_p": 0.08333333333333333,
+        "conditions": [
+          {
+            "name": "WESAD:meditation",
+            "expected_rank": 4,
+            "observed_index": 90.0
+          },
+          {
+            "name": "WESAD:baseline",
+            "expected_rank": 3,
+            "observed_index": 87.5
+          },
+          {
+            "name": "WESAD:amusement",
+            "expected_rank": 2,
+            "observed_index": 77.3
+          },
+          {
+            "name": "WESAD:stress",
+            "expected_rank": 1,
+            "observed_index": 22.6
+          }
+        ]
+      },
+      "pooled_cross_modal": {
+        "spearman_rho": 0.6571428571428573,
+        "spearman_p": 0.1561749271137024,
+        "kendall_tau": 0.6,
+        "kendall_p": 0.1361111111111111,
+        "conditions": [
+          {
+            "name": "WESAD:meditation",
+            "expected_rank": 4,
+            "observed_index": 90.0
+          },
+          {
+            "name": "WESAD:baseline",
+            "expected_rank": 3,
+            "observed_index": 87.5
+          },
+          {
+            "name": "WESAD:amusement",
+            "expected_rank": 2,
+            "observed_index": 77.3
+          },
+          {
+            "name": "WESAD:stress",
+            "expected_rank": 1,
+            "observed_index": 22.6
+          },
+          {
+            "name": "EEG:Concentrated",
+            "expected_rank": 1.5,
+            "observed_index": 34.6
+          },
+          {
+            "name": "EEG:Relaxed",
+            "expected_rank": 4.5,
+            "observed_index": 77.2
+          }
+        ]
+      },
+      "eeg_ordering": {
+        "Concentrated": 34.6,
+        "Relaxed": 77.2
+      }
+    }
+  },
+  "personalization": {
+    "per_subject": [
+      {
+        "subject": "S10",
+        "n_score": 49,
+        "n_adapt": 12,
+        "auroc_independent": 0.4569377990430622,
+        "balacc_independent": 0.618421052631579,
+        "auroc_recenter": 0.9952153110047847,
+        "auroc_zscore": 1.0
+      },
+      {
+        "subject": "S11",
+        "n_score": 49,
+        "n_adapt": 12,
+        "auroc_independent": 0.9712918660287081,
+        "balacc_independent": 0.9078947368421053,
+        "auroc_recenter": 1.0,
+        "auroc_zscore": 1.0
+      },
+      {
+        "subject": "S13",
+        "n_score": 49,
+        "n_adapt": 12,
+        "auroc_independent": 0.9952153110047848,
+        "balacc_independent": 0.7727272727272727,
+        "auroc_recenter": 1.0,
+        "auroc_zscore": 1.0
+      },
+      {
+        "subject": "S14",
+        "n_score": 49,
+        "n_adapt": 12,
+        "auroc_independent": 0.6578947368421052,
+        "balacc_independent": 0.6052631578947368,
+        "auroc_recenter": 0.9425837320574162,
+        "auroc_zscore": 0.9569377990430622
+      },
+      {
+        "subject": "S15",
+        "n_score": 49,
+        "n_adapt": 12,
+        "auroc_independent": 0.9904306220095693,
+        "balacc_independent": 0.5,
+        "auroc_recenter": 1.0,
+        "auroc_zscore": 1.0
+      },
+      {
+        "subject": "S16",
+        "n_score": 48,
+        "n_adapt": 12,
+        "auroc_independent": 0.8476658476658476,
+        "balacc_independent": 0.6142506142506143,
+        "auroc_recenter": 1.0,
+        "auroc_zscore": 1.0
+      },
+      {
+        "subject": "S17",
+        "n_score": 49,
+        "n_adapt": 10,
+        "auroc_independent": 0.7559808612440191,
+        "balacc_independent": 0.5,
+        "auroc_recenter": 0.9019138755980861,
+        "auroc_zscore": 0.6746411483253588
+      },
+      {
+        "subject": "S2",
+        "n_score": 47,
+        "n_adapt": 10,
+        "auroc_independent": 0.1616161616161616,
+        "balacc_independent": 0.5,
+        "auroc_recenter": 0.9797979797979798,
+        "auroc_zscore": 0.9444444444444444
+      },
+      {
+        "subject": "S3",
+        "n_score": 47,
+        "n_adapt": 11,
+        "auroc_independent": 0.9671717171717171,
+        "balacc_independent": 0.5,
+        "auroc_recenter": 1.0,
+        "auroc_zscore": 1.0
+      },
+      {
+        "subject": "S4",
+        "n_score": 48,
+        "n_adapt": 12,
+        "auroc_independent": 0.4668304668304668,
+        "balacc_independent": 0.5454545454545454,
+        "auroc_recenter": 0.9336609336609337,
+        "auroc_zscore": 0.9877149877149877
+      },
+      {
+        "subject": "S5",
+        "n_score": 49,
+        "n_adapt": 12,
+        "auroc_independent": 0.9736842105263157,
+        "balacc_independent": 0.8696172248803828,
+        "auroc_recenter": 1.0,
+        "auroc_zscore": 1.0
+      },
+      {
+        "subject": "S6",
+        "n_score": 48,
+        "n_adapt": 12,
+        "auroc_independent": 0.8574938574938575,
+        "balacc_independent": 0.8955773955773956,
+        "auroc_recenter": 1.0,
+        "auroc_zscore": 1.0
+      },
+      {
+        "subject": "S7",
+        "n_score": 49,
+        "n_adapt": 12,
+        "auroc_independent": 0.9952153110047848,
+        "balacc_independent": 0.9210526315789473,
+        "auroc_recenter": 0.9449760765550239,
+        "auroc_zscore": 0.8755980861244019
+      },
+      {
+        "subject": "S8",
+        "n_score": 47,
+        "n_adapt": 12,
+        "auroc_independent": 0.9270270270270271,
+        "balacc_independent": 0.9324324324324325,
+        "auroc_recenter": 0.927027027027027,
+        "auroc_zscore": 0.9027027027027028
+      },
+      {
+        "subject": "S9",
+        "n_score": 48,
+        "n_adapt": 12,
+        "auroc_independent": 0.9236842105263159,
+        "balacc_independent": 0.5105263157894737,
+        "auroc_recenter": 1.0,
+        "auroc_zscore": 0.8447368421052631
+      }
+    ],
+    "methods": [
+      "recenter",
+      "zscore"
+    ],
+    "recenter": {
+      "mean_auroc": 0.9750116623800834,
+      "mean_lift": 0.17846899531110055,
+      "helped": 13,
+      "hurt": 2,
+      "wilcoxon_p": 0.00152587890625
+    },
+    "zscore": {
+      "mean_auroc": 0.9457850673640148,
+      "mean_lift": 0.14924240029503189,
+      "helped": 11,
+      "hurt": 4,
+      "wilcoxon_p": 0.063720703125
+    },
+    "independent_mean_auroc": 0.7965426670689827
+  },
+  "deep": {
+    "backend": "torch",
+    "wesad": {
+      "classical_auroc": 0.9797305790288348,
+      "deep_auroc": 0.8956972371960396,
+      "classical_balacc": 0.9199189079508276,
+      "deep_balacc": 0.8400892084367335,
+      "deep_wins": false
+    },
+    "custom_mlp": {
+      "classical_recording_auroc": 0.9333333333333333,
+      "deep_recording_auroc": 0.9,
+      "deep_wins": false
+    },
+    "custom_lstm": {
+      "recording_auroc": 0.8111111111111111,
+      "recording_acc": 0.7368421052631579,
+      "n": 19,
+      "deep_wins": false
+    },
+    "verdict": "deep does NOT beat the calibrated classical baseline (classical retained); honest given small N and a high classical bar"
   }
 }

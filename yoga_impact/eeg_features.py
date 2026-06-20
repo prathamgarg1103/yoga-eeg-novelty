@@ -20,6 +20,7 @@ import pandas as pd
 from scipy import signal as sps
 
 from yoga_impact import config
+from yoga_impact import eeg_connectivity
 
 META = ("subject", "state", "recording_id", "label", "device")
 
@@ -99,6 +100,10 @@ def window_features(seg: np.ndarray, fs: float) -> dict:
     feat["mean_theta_rel"] = (bpL["theta_rel"] + bpR["theta_rel"]) / 2
     feat["mean_beta_rel"] = (bpL["beta_rel"] + bpR["beta_rel"]) / 2
     feat["mean_alpha_theta"] = (feat["L_alpha_theta"] + feat["R_alpha_theta"]) / 2
+    if config.USE_CONNECTIVITY_FEATURES:
+        # C1: connectivity / coupling / aperiodic block (on the already-filtered pair)
+        feat.update(eeg_connectivity.window_connectivity_features(
+            np.stack([left, right]), fs))
     return feat
 
 

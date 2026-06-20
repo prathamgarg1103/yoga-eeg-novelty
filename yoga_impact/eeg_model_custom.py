@@ -48,6 +48,52 @@ def _recording_level(df, oof_prob):
     return agg, acc, auroc
 
 
+def _feature_blocks(feats: list[str]):
+    """Split the feature columns into the original 'base' set and the C1 novelty blocks."""
+    conn = [c for c in feats if c.startswith(("coh_", "plv_"))]
+    pac = [c for c in feats if c.startswith("pac_")]
+    aperiodic = [c for c in feats if c in ("aperiodic_exponent", "aperiodic_offset", "alpha_peak_hz")]
+    novel = set(conn + pac + aperiodic)
+    base = [c for c in feats if c not in novel]
+    return base, conn, pac, aperiodic
+
+
+def _ablation(df, feats, y) -> dict:
+    """C1 ablation: does each connectivity/coupling/aperiodic block add recording-level AUROC?
+
+    Honest by design — uses the SAME leak-free group_cv_evaluate; reports the lift over
+    'base' for both LORO(recording) and LOPO(subject). On 2 channels / ~4 subjects the
+    lift may be ~0; we report it either way.
+    """
+    base, conn, pac, aperiodic = _feature_blocks(feats)
+    combos = {
+        "base": base,
+        "base+conn": base + conn,
+        "base+pac": base + pac,
+        "base+aperiodic": base + aperiodic,
+        "base+all": base + conn + pac + aperiodic,
+    }
+    out: dict[str, dict] = {}
+    for cv_name, gcol in [("LORO", "recording_id"), ("LOPO", "subject")]:
+        groups = df[gcol].to_numpy()
+        out[cv_name] = {}
+        for name, cols in combos.items():
+            if not cols:
+                continue
+            res = group_cv_evaluate(df[cols].to_numpy(float), y, groups, _logit, calibrate="sigmoid")
+            _, racc, rauroc = _recording_level(df, res.oof_prob)
+            out[cv_name][name] = dict(recording_auroc=rauroc, recording_acc=racc,
+                                      window_auroc=res.pooled["auroc"], n_features=len(cols))
+    # lifts relative to base (recording-level AUROC)
+    for cv_name in out:
+        b = out[cv_name].get("base", {}).get("recording_auroc")
+        for name, d in out[cv_name].items():
+            d["auroc_lift_vs_base"] = (float(d["recording_auroc"] - b)
+                                       if b is not None and np.isfinite(b)
+                                       and np.isfinite(d["recording_auroc"]) else float("nan"))
+    return out
+
+
 def run() -> dict:
     recs = load_clean_recordings()
     df = build_feature_matrix(recs)
@@ -83,6 +129,18 @@ def run() -> dict:
     print(f"\npermutation test (LORO, LogReg): observed AUROC={perm['observed_auroc']:.3f}  "
           f"perm-mean={perm['perm_mean']:.3f}  p={perm['perm_p']:.3f}")
     results["permutation_LORO"] = perm
+
+    # ---- C1 ablation: connectivity / coupling / aperiodic feature blocks -----
+    abl = _ablation(df, feats, y)
+    results["ablation"] = abl
+    base_n, conn_n, pac_n, ap_n = (len(b) for b in _feature_blocks(feats))
+    print(f"\n--- C1 feature ablation (recording-level AUROC; base={base_n} feats, "
+          f"+conn={conn_n} +pac={pac_n} +aperiodic={ap_n}) ---")
+    for cv_name in ("LORO", "LOPO"):
+        print(f"  {cv_name}:")
+        for name, d in abl[cv_name].items():
+            print(f"    {name:16s} AUROC={d['recording_auroc']:.3f}  "
+                  f"(lift {d['auroc_lift_vs_base']:+.3f})")
 
     # ---- Relaxation Index per recording (LORO LogReg, calibrated) -----------
     groups = df["recording_id"].to_numpy()

@@ -1,0 +1,86 @@
+{
+  "custom": {
+    "ece": 0.09474575972062522,
+    "mce": 0.2510213152592842,
+    "conformal_coverage": 0.9473684210526315,
+    "nominal": 0.9
+  },
+  "wesad": {
+    "ece": 0.02128365438193034,
+    "mce": 0.1727368045245904,
+    "conformal_coverage": 0.8871499176276771,
+    "nominal": 0.9
+  },
+  "convergent_validity": {
+    "autonomic": {
+      "spearman_rho": 1.0,
+      "spearman_p": 0.0,
+      "kendall_tau": 1.0,
+      "kendall_p": 0.08333333333333333,
+      "conditions": [
+        {
+          "name": "WESAD:meditation",
+          "expected_rank": 4,
+          "observed_index": 90.0
+        },
+        {
+          "name": "WESAD:baseline",
+          "expected_rank": 3,
+          "observed_index": 87.5
+        },
+        {
+          "name": "WESAD:amusement",
+          "expected_rank": 2,
+          "observed_index": 77.3
+        },
+        {
+          "name": "WESAD:stress",
+          "expected_rank": 1,
+          "observed_index": 22.6
+        }
+      ]
+    },
+    "pooled_cross_modal": {
+      "spearman_rho": 0.6571428571428573,
+      "spearman_p": 0.1561749271137024,
+      "kendall_tau": 0.6,
+      "kendall_p": 0.1361111111111111,
+      "conditions": [
+        {
+          "name": "WESAD:meditation",
+          "expected_rank": 4,
+          "observed_index": 90.0
+        },
+        {
+          "name": "WESAD:baseline",
+          "expected_rank": 3,
+          "observed_index": 87.5
+        },
+        {
+          "name": "WESAD:amusement",
+          "expected_rank": 2,
+          "observed_index": 77.3
+        },
+        {
+          "name": "WESAD:stress",
+          "expected_rank": 1,
+          "observed_index": 22.6
+        },
+        {
+          "name": "EEG:Concentrated",
+          "expected_rank": 1.5,
+          "observed_index": 34.6
+        },
+        {
+          "name": "EEG:Relaxed",
+          "expected_rank": 4.5,
+          "observed_index": 77.2
+        }
+      ]
+    },
+    "eeg_ordering": {
+      "Concentrated": 34.6,
+      "Relaxed": 77.2
+    }
+  }
+}

@@ -22,6 +22,11 @@ MESMI_extracted.txt
 # ── Large, regenerable feature caches ───────────────────
 yoga_impact/outputs/wesad_features.csv
 yoga_impact/outputs/ds_meditation_features.csv
+yoga_impact/outputs/ds_network_features.csv
+yoga_impact/outputs/ds_network_connectivity.npz
+
+# ── Scratch run logs (this session) ─────────────────────
+_*.log
 
 # ── OS / editor cruft ───────────────────────────────────
 Thumbs.db

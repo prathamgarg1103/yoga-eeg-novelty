@@ -5,18 +5,23 @@ Usage:
     python -m yoga_impact.run_all --stages audit clean wesad custom ds report
 
 Stages (each is independently runnable and caches expensive work):
-    audit   - inventory + signal-integrity probe of the custom data
-    clean   - build the de-duplicated, title-labelled clean custom set
-    wesad   - WESAD autonomic axis (LOSO)              [backbone]
-    custom  - custom yoga EEG relaxation model         [case study]
-    ds      - ds001787 external EEG validation
-    report  - assemble the Composite Yoga Index report
+    audit       - inventory + signal-integrity probe of the custom data
+    clean       - build the de-duplicated, title-labelled clean custom set
+    wesad       - WESAD autonomic axis (LOSO)              [backbone]
+    custom      - custom yoga EEG relaxation model + C1 connectivity ablation [case study]
+    ds          - ds001787 external EEG validation (F7/F8 transfer)
+    network     - C2: 64-channel brain-network analysis (ds001787)
+    personalize - C4: leak-free few-shot subject adaptation
+    deep        - C5: deep vs calibrated-classical head-to-head
+    uncertainty - C3: conformal intervals + ECE + cross-modal convergent validity
+    report      - assemble the Composite Yoga Index report
 """
 from __future__ import annotations
 
 import argparse
 
-ALL_STAGES = ["audit", "clean", "wesad", "custom", "ds", "report"]
+ALL_STAGES = ["audit", "clean", "wesad", "custom", "ds",
+              "network", "personalize", "deep", "uncertainty", "report"]
 
 
 def main() -> None:
@@ -43,6 +48,18 @@ def main() -> None:
         elif stage == "ds":
             from yoga_impact import ds_meditation
             ds_meditation.run()
+        elif stage == "network":
+            from yoga_impact import ds_network
+            ds_network.run()
+        elif stage == "personalize":
+            from yoga_impact import personalization
+            personalization.run()
+        elif stage == "deep":
+            from yoga_impact import deep_baseline
+            deep_baseline.run()
+        elif stage == "uncertainty":
+            from yoga_impact import uncertainty
+            uncertainty.run()
         elif stage == "report":
             from yoga_impact import composite
             composite.main()

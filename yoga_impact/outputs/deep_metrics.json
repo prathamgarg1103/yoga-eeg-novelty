@@ -1,0 +1,22 @@
+{
+  "backend": "torch",
+  "wesad": {
+    "classical_auroc": 0.9797305790288348,
+    "deep_auroc": 0.8956972371960396,
+    "classical_balacc": 0.9199189079508276,
+    "deep_balacc": 0.8400892084367335,
+    "deep_wins": false
+  },
+  "custom_mlp": {
+    "classical_recording_auroc": 0.9333333333333333,
+    "deep_recording_auroc": 0.9,
+    "deep_wins": false
+  },
+  "custom_lstm": {
+    "recording_auroc": 0.8111111111111111,
+    "recording_acc": 0.7368421052631579,
+    "n": 19,
+    "deep_wins": false
+  },
+  "verdict": "deep does NOT beat the calibrated classical baseline (classical retained); honest given small N and a high classical bar"
+}
