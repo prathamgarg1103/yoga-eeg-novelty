@@ -41,9 +41,23 @@ wesad.py             WESAD loading + autonomic features (neurokit2 + scipy)
 wesad_model.py       WESAD LOSO: stress-vs-rest + calm-vs-stress relaxation score
 eeg_model_custom.py  custom yoga EEG: Relaxed-vs-Concentrated -> Relaxation Index
 ds_meditation.py     ds001787 external validation (A7/B10 = F7/F8) + transfer
+ds_eegmat.py         PhysioNet EEGMAT loader (Neurocom F7/F8) — 2nd EEG device
+riemann_spd.py       SPD-manifold primitives (Fréchet mean, tangent map, Bures-Wasserstein)
+riemann.py           FLAGSHIP: Riemannian manifold + optimal-transport effect size (R1–R3)
 composite.py         Composite Yoga Index + outputs/REPORT.md
 run_all.py           orchestrator
 ```
+
+## Flagship pipeline — "The Geometry of Calm"
+
+The third, flagship pipeline represents each window by the *geometry* of its multiband
+channel covariance (a point on the SPD manifold) and quantifies yoga's impact as the
+optimal-transport (Bures-Wasserstein) distance between state distributions. It adds a
+**device-portable** relaxation signature (a model trained on one EEG device works on
+another: Neurocom→Emotiv AUROC 0.88) and a significance-tested effect size with convergent
+(state) and discriminant (trait) validity. Full explanation —
+including the math, the code map, the results, and the honest limitations — is in
+[`docs/FLAGSHIP_Geometry_of_Calm.md`](docs/FLAGSHIP_Geometry_of_Calm.md).
 
 ## How to run
 

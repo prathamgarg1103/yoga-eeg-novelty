@@ -98,3 +98,26 @@ DEEP_INPUT = "feature_seq"                        # feature_seq | raw_window
 DEEP_EPOCHS = 60
 DEEP_HIDDEN = 32
 DEEP_MAX_SEQ = 64                                 # cap windows per group sequence
+
+# ---------------------------------------------------------------------------
+# FLAGSHIP — "Geometry of Calm": Riemannian manifold + optimal-transport (R1-R3)
+# ---------------------------------------------------------------------------
+# Each window -> an augmented multiband covariance (an SPD matrix). The two frontal
+# channels are expanded into band-filtered virtual channels, so a single covariance
+# carries spectral power (diagonal), spatial coupling and cross-band coupling
+# (off-diagonal). Tangent-space projection at the per-fold geometric mean is the
+# feature map; everything stays inside modeling's leak-free group CV.
+RIEMANN_BANDS = ("theta", "alpha", "beta")        # virtual-channel bands (per EEG channel)
+RIEMANN_SHRINKAGE = 0.10                           # covariance shrinkage toward scaled I
+RIEMANN_CALIBRATE = "sigmoid"                      # in-fold probability calibration
+# R2 transfer: Emotiv (custom) -> BioSemi (ds001787) frontal manifold, with vs without
+# Riemannian re-centering (each domain whitened by its own geometric mean = the
+# device-invariance step). Reported honestly either way.
+RIEMANN_TRANSFER = True
+# R3 optimal transport: Bures-Wasserstein 2-Wasserstein distance between the per-state
+# physiological distributions = a single interpretable "how far yoga moves you" effect
+# size, with a group-level permutation p-value.
+OT_N_PERM = 500
+OT_GAUSS_SHRINK = 0.05
+# WESAD condition pairs scored for the OT yoga-impact effect size (label ints from wesad.py)
+OT_WESAD_PAIRS = (("meditation", "stress"), ("meditation", "baseline"), ("baseline", "stress"))

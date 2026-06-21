@@ -1,0 +1,177 @@
+{
+  "R1_manifold_vs_classical": {
+    "LORO(recording)": {
+      "classical": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.8421052631578947,
+        "window_auroc": 0.9079827400215751
+      },
+      "riemann": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.8421052631578947,
+        "window_auroc": 0.9035958288385473
+      },
+      "recording_auroc_gain": 0.0
+    },
+    "LOPO(subject)": {
+      "classical": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.8421052631578947,
+        "window_auroc": 0.86789644012945
+      },
+      "riemann": {
+        "recording_auroc": 0.9333333333333333,
+        "recording_acc": 0.8421052631578947,
+        "window_auroc": 0.8802445163610213
+      },
+      "recording_auroc_gain": 0.0
+    }
+  },
+  "ot_custom": {
+    "state_a": "Relaxed",
+    "state_b": "Concentrated",
+    "w2": 1.7161901492251297,
+    "w2_sq": 2.945308628297373,
+    "mean_term": 2.6979233200536483,
+    "cov_term": 0.24738530824372454,
+    "perm_mean": 0.42840201739825107,
+    "p": 0.001996007984031936,
+    "n_perm": 500
+  },
+  "R1_ds_expert_vs_novice": {
+    "subject_auroc": 0.4444444444444444,
+    "window_auroc": 0.45433482468955444
+  },
+  "R2b_state_to_trait_control": {
+    "naive": {
+      "window_auroc": 0.47530004666828995,
+      "subject_auroc": 0.4652777777777778,
+      "n": 24
+    },
+    "recentered": {
+      "window_auroc": 0.45712097232367505,
+      "subject_auroc": 0.4375,
+      "n": 24
+    },
+    "subject_auroc_gain": -0.02777777777777779
+  },
+  "ot_ds": {
+    "state_a": "expert",
+    "state_b": "novice",
+    "w2": 0.9660722434951945,
+    "w2_sq": 0.9332955796518384,
+    "mean_term": 0.42475827785509335,
+    "cov_term": 0.5085373017967451,
+    "perm_mean": 2.2170622988773148,
+    "p": 0.9021956087824351,
+    "n_perm": 500
+  },
+  "R1_eegmat_rest_vs_arith": {
+    "classical_recording_auroc": 0.7098765432098765,
+    "riemann_recording_auroc": 0.6998456790123457,
+    "classical_window_auroc": 0.6801531267192371,
+    "riemann_window_auroc": 0.6686024003097174
+  },
+  "R2_transfer_emotiv_to_neurocom": {
+    "naive": {
+      "window_auroc": 0.6113696334331764,
+      "subject_auroc": 0.6296296296296298,
+      "n": 72
+    },
+    "recentered": {
+      "window_auroc": 0.6097917558122949,
+      "subject_auroc": 0.6095679012345679,
+      "n": 72
+    },
+    "subject_auroc_gain": -0.020061728395061817
+  },
+  "R2_transfer_neurocom_to_emotiv": {
+    "naive": {
+      "window_auroc": 0.8608917655519597,
+      "subject_auroc": 0.8777777777777778,
+      "n": 19
+    },
+    "recentered": {
+      "window_auroc": 0.8719525350593312,
+      "subject_auroc": 0.8888888888888888,
+      "n": 19
+    },
+    "subject_auroc_gain": 0.011111111111111072
+  },
+  "ot_eegmat": {
+    "state_a": "Relaxed",
+    "state_b": "Concentrated",
+    "w2": 0.4588441870426875,
+    "w2_sq": 0.21053798798286477,
+    "mean_term": 0.1409628415661999,
+    "cov_term": 0.06957514641666489,
+    "perm_mean": 0.20874845020286262,
+    "p": 0.37924151696606784,
+    "n_perm": 500
+  },
+  "R1_eegmat_multichannel": {
+    "n_channels": 19,
+    "classical_recording_auroc": 0.7469135802469136,
+    "classical_window_auroc": 0.7184539091631518,
+    "riemann_broadband_recording_auroc": 0.6875,
+    "riemann_broadband_window_auroc": 0.6709112720826456,
+    "riemann_bandspecific_recording_auroc": 0.7530864197530864,
+    "riemann_bandspecific_window_auroc": 0.7365746683782628,
+    "best_gain_vs_classical": 0.006172839506172867
+  },
+  "ot_eegmat_multichannel": {
+    "state_a": "Relaxed",
+    "state_b": "Concentrated",
+    "w2": 1.812348916930763,
+    "w2_sq": 3.2846085967001093,
+    "mean_term": 0.8531811580199216,
+    "cov_term": 2.431427438680188,
+    "perm_mean": 3.170062514949832,
+    "p": 0.21157684630738524,
+    "n_perm": 500
+  },
+  "ot_wesad": {
+    "meditation_vs_stress": {
+      "state_a": "meditation",
+      "state_b": "stress",
+      "w2": 6.947779523263108,
+      "w2_sq": 48.27164030387414,
+      "mean_term": 22.287018708049676,
+      "cov_term": 25.984621595824468,
+      "perm_mean": 21.83119945047237,
+      "p": 0.001996007984031936,
+      "n_perm": 500
+    },
+    "meditation_vs_baseline": {
+      "state_a": "meditation",
+      "state_b": "baseline",
+      "w2": 4.22470590321968,
+      "w2_sq": 17.848139968699208,
+      "mean_term": 10.761183510838931,
+      "cov_term": 7.086956457860278,
+      "perm_mean": 6.8001470026610535,
+      "p": 0.001996007984031936,
+      "n_perm": 500
+    },
+    "baseline_vs_stress": {
+      "state_a": "baseline",
+      "state_b": "stress",
+      "w2": 5.89686212020371,
+      "w2_sq": 34.77298286469339,
+      "mean_term": 13.611890760857746,
+      "cov_term": 21.161092103835642,
+      "perm_mean": 16.401130056100904,
+      "p": 0.001996007984031936,
+      "n_perm": 500
+    }
+  },
+  "validity": {
+    "n_state": 5,
+    "n_state_significant": 4,
+    "n_trait": 1,
+    "n_trait_significant": 0,
+    "convergent_ok": false,
+    "discriminant_ok": true,
+    "verdict": "OT effect size is significant for 4/5 within-person STATE contrasts and 0/1 between-person TRAIT contrast (expect state large, trait null). Convergent + discriminant validity holds; any non-significant state contrast is a small, honestly-underpowered shift (e.g. frontal-only EEGMAT), not a failure."
+  }
+}

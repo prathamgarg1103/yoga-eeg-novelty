@@ -24,6 +24,19 @@ yoga_impact/outputs/wesad_features.csv
 yoga_impact/outputs/ds_meditation_features.csv
 yoga_impact/outputs/ds_network_features.csv
 yoga_impact/outputs/ds_network_connectivity.npz
+# flagship Riemannian / EEGMAT covariance + feature caches (regenerable from raw data)
+yoga_impact/outputs/ds_riemann_covs.npz
+yoga_impact/outputs/ds_riemann_meta.csv
+yoga_impact/outputs/eegmat_riemann_covs.npz
+yoga_impact/outputs/eegmat_riemann_meta.csv
+yoga_impact/outputs/eegmat_band.csv
+yoga_impact/outputs/eegmat_mc_covs.npz
+yoga_impact/outputs/eegmat_mc_bandcovs.npz
+yoga_impact/outputs/eegmat_mc_band.csv
+yoga_impact/outputs/eegmat_mc_meta.csv
+
+# ── Scratch text extracts (copyrighted source, kept local) ─
+yoga_impact/docs/_prior_paper.txt
 
 # ── Scratch run logs (this session) ─────────────────────
 _*.log

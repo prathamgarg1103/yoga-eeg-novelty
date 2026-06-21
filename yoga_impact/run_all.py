@@ -14,6 +14,7 @@ Stages (each is independently runnable and caches expensive work):
     personalize - C4: leak-free few-shot subject adaptation
     deep        - C5: deep vs calibrated-classical head-to-head
     uncertainty - C3: conformal intervals + ECE + cross-modal convergent validity
+    riemann     - FLAGSHIP: Riemannian manifold + optimal-transport effect size
     report      - assemble the Composite Yoga Index report
 """
 from __future__ import annotations
@@ -21,7 +22,7 @@ from __future__ import annotations
 import argparse
 
 ALL_STAGES = ["audit", "clean", "wesad", "custom", "ds",
-              "network", "personalize", "deep", "uncertainty", "report"]
+              "network", "personalize", "deep", "uncertainty", "riemann", "report"]
 
 
 def main() -> None:
@@ -60,6 +61,9 @@ def main() -> None:
         elif stage == "uncertainty":
             from yoga_impact import uncertainty
             uncertainty.run()
+        elif stage == "riemann":
+            from yoga_impact import riemann
+            riemann.run()
         elif stage == "report":
             from yoga_impact import composite
             composite.main()

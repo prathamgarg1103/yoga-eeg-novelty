@@ -19,7 +19,7 @@
   },
   "calm_vs_stress::permutation": {
     "observed_auroc": 0.9810162722796634,
-    "perm_mean": 0.4971659681545513,
+    "perm_mean": 0.4971659801256244,
     "perm_p": 0.006622516556291391,
     "n_perm": 150
   },
