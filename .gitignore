@@ -38,6 +38,9 @@ yoga_impact/outputs/eegmat_mc_meta.csv
 # ── Scratch text extracts (copyrighted source, kept local) ─
 yoga_impact/docs/_prior_paper.txt
 
+# ── Teacher-facing viva/presentation prep (keep LOCAL, not for public repo) ─
+*_FOR_TEACHER.md
+
 # ── Scratch run logs (this session) ─────────────────────
 _*.log
 
